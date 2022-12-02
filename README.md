@@ -5,7 +5,7 @@ Stuff to help block Computrace via software tweaks
 Computrace an motherboard option in some computer BIO's which allows a company called "*Absolute*" to track your computer and has the ability to remotely brick it at the whim of the original owner or company.  
 *Absolute* also has communications to authorities.  
 It's intended as an anti theft and works like a root kit, but because it cannot be turned off once activated. It makes buying used computers or trash picked computers an absolute pain in the butt.  
-![RIP](https://i.imgur.com/DlXiBaT.png)
+![RIP](https://i.imgur.com/DlXiBaT.png)  
 If you see this screen, it's enabled.  
   
 Also anti viruses completely whitelist computrace and from what I've read, malware loves to abuse computrace to spread.  
@@ -53,7 +53,7 @@ First off you can see whether it has injected into your windows install by going
 While this method doesn't stop the program from running, it stops the rpcnet processes from actually talking to *Absolute*.  
 Run notepad as administator and edit **C:\Windows\System32\drivers\etc\hosts**
 Copy all the listings in the included **Hosts File Entries.txt** file and paste it on the bottom of the file like so:  
-![Hosts Block](https://i.imgur.com/qZocvRM.png)
+![Hosts Block](https://i.imgur.com/qZocvRM.png)  
 This will basically point all absolute servers to yourself, effectively blocking it.  
   
   
