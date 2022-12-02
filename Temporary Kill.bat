@@ -1,4 +1,4 @@
-@Echo Off
+@echo Off
 NET STOP CscService /Y 
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\services\CscService" /v "Start" /t REG_DWORD /d "4" /f
 NET STOP Ctes Manager /Y
@@ -9,6 +9,10 @@ NET STOP rpchdp /Y
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\services\rpchdp" /v "Start" /t REG_DWORD /d "4" /f
 NET STOP rpcnet /Y
 Reg.exe add "HKLM\SYSTEM\CurrentControlSet\services\rpcnet" /v "Start" /t REG_DWORD /d "4" /f
+NET STOP rpcnetp /Y
+Reg.exe add "HKLM\SYSTEM\CurrentControlSet\services\rpcnetp" /v "Start" /t REG_DWORD /d "4" /f
+taskkill /f /im rpcnet.exe /t
+taskkill /f /im rpcnetp.exe /t
 DEL /F /Q /A C:\Windows\SysWOW64\cshost.dll
 DEL /F /Q /A C:\Windows\SysWOW64\CTLojack.dll
 DEL /F /Q /A C:\Windows\SysWOW64\DIAGDLL64.DLL
@@ -19,6 +23,7 @@ DEL /F /Q /A C:\Windows\SysWOW64\wceprv.dll
 DEL /F /Q /A C:\Windows\SysWOW64\instw64.exe
 DEL /F /Q /A C:\Windows\SysWOW64\pkgslv.exe
 DEL /F /Q /A C:\Windows\SysWOW64\rpcnet.exe
+DEL /F /Q /A C:\Windows\SysWOW64\rpcnetp.exe
 DEL /F /Q /A C:\Windows\System32\cshost.dll
 DEL /F /Q /A C:\Windows\System32\CTLojack.dll
 DEL /F /Q /A C:\Windows\System32\DIAGDLL64.DLL
@@ -29,6 +34,7 @@ DEL /F /Q /A C:\Windows\System32\wceprv.dll
 DEL /F /Q /A C:\Windows\System32\instw64.exe
 DEL /F /Q /A C:\Windows\System32\pkgslv.exe
 DEL /F /Q /A C:\Windows\System32\rpcnet.exe
+DEL /F /Q /A C:\Windows\System32\rpcnetp.exe
 RD /S /Q C:\ProgramData\CTES
 RD /S /Q C:\ProgramData\Rpcnet
 PAUSE
