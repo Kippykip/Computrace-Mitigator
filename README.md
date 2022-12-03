@@ -71,7 +71,7 @@ Anyway included in the package is **Image File Execution Block.reg**. Installing
 ### 3. Delete the Computrace files and in it's place, create folders with the same filename.
 This is a funny one, due to the technicalities of NTFS and FAT32, you can't make a file and a folder in the same directory under the exact same name.
 So what happens if you delete the originals, then make a bunch of folders with the same name as the Computrace executables?
-Welp, simply **BIOS_Computrace** can't make the files to for **Windows_Computrace**!
+Welp, simply **BIOS_Computrace** can't make the files to for **Windows_Computrace**!  
 ![enter image description here](https://i.imgur.com/v7KfJDK.png)
 
 ### 4. Use Linux
