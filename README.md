@@ -96,5 +96,6 @@ I also found a feature in Windows called WPBT which allows hardware vendors to e
 There is another project for disabling WPBT entirely, but I tested bitlocker with the regedit key and it didn't seem to have any effect on Computrace. I'm still trying other options though.
 https://github.com/Jamesits/dropWPBT
 
+## Conclusion?
 It might be overkill but the **"Permanent Kill.bat"** script I made combines methods 1-3 together as well as disabling the services and turning off the WPBT feature (just in case).  
 Call me paranoid if you want. But I just wanna watch garfield on my TV from a trash picked computer without having to worry about a swat team showing up at my house.
