@@ -1,3 +1,4 @@
+
 # Computrace-Mitigator
 Stuff to help block Computrace via software tweaks  
   
@@ -64,19 +65,11 @@ I used to use this method back in the day to make Ease of Access on Windows 7 ru
 Anyway included in the package is **Image File Execution Block.reg**. Installing this will prevent the **Windows_Computrace** / **rpcnet** services from starting up if it ever got the chance.  
 ![Image FIle Execution Options FTW](https://i.imgur.com/sJBBYGx.png)
 
-### 3. Bitlocker Encryption
-From my testing Bitlocker hard drive encryption stops **BIOS_Computrace** from tampering with any of the Windows files altogether preventing the **WINDOWS_Computrace** steps from happening altogether. My theory is once it's enabled then the **BIOS_Computrace** can't read the NTFS hard drive partitions since they're encrypted.  
-Although on non TPM machines (like my trash picked Lenovo) you'll have to change a few settings in Group Policy Editor *gpedit.msc* to force allow bitlocker.  
-https://www.howtogeek.com/howto/6229/how-to-use-bitlocker-on-drives-without-tpm/  
-
-But then you'll have to deal with either having to use a password every bootup, or a permanently attach a thumbdrive in the back of the unit. Although I should mention due to my limited sample size, I don't know whether Computrace can use TPM enabled bitlockers to read the bitlocker decryption key and thus tampter with the Windows partitions anyway. I doubt Computrace is that sophisticated though.  
-
-Also if you ever ran Windows on the Computrace enabled machine prior to enabling Bitlocker, then absolutely make sure you run **"Temporary Kill.bat"** as administrator and check task manager and services.msc that no **rpcnet** services are running. Once bitlocker is fully enabled and on, the "Temporary Kill" batch file should basically be a "Permanent Kill" from this point.  
-
-### 4. Use Linux
+### 3. Use Linux
 Supposedly Computrace doesn't support linux at all due to the way it works.  
 So in theory just using Linux instead should keep you save? I haven't tested this method but it seems like an extreme one to change your entire preferred OS.  
-### 5. Reflashing the BIOS with a generic one that doesn't contain Computrace
+
+### 4. Reflashing the BIOS with a generic one that doesn't contain Computrace
 From what I understand, no matter what bios ROM you flash onto the motherboard from the manufacturer, Computrace seems to live.  
 
 However if you were to reflash the entire bios EPROM with a generic one like https://libreboot.org that doesn't even contain Computrace anyway, you should be gold.  
@@ -87,5 +80,11 @@ Here's a video by [Mental Outlaw](https://www.youtube.com/@MentalOutlaw) install
 And here's a video of [TheOmnitubers](https://www.youtube.com/@TheOmnitubers) reflashing it via a common raspberry pi:  
 https://www.youtube.com/watch?v=VFPT3e6obiI  
 
+## What didn't work
 
-For me though for personal use,  I'm going to combine methods 1-3 together. Call me paranoid if you want. But I just wanna watch garfield on my TV without interruptions via a computer from the trash.
+Surprisingly bitlocker encryption doesn't prevent Computrace from being installed, initially I thought it did but it took another reboot.  
+I also found a feature in Windows called WPBT which allows hardware vendors to easily install any junk into the Windows Installation including other theft tracking executables.  
+There is another project for disabling WPBT entirely, but I tested bitlocker with the regedit key and it didn't seem to have any effect on Computrace. I'm still trying other options though.  
+https://github.com/Jamesits/dropWPBT
+
+For me though for personal use,  I'm going to combine methods 1-2 together but I still feel it's not enough. Call me paranoid if you want. But I just wanna watch garfield on my TV from a trash picked computer without having to worry about a swat team showing up at my house.
