@@ -99,3 +99,10 @@ https://github.com/Jamesits/dropWPBT
 ## Conclusion?
 It might be overkill but the **"Permanent Kill.bat"** script I made combines methods 1-3 together as well as disabling the services and turning off the WPBT feature (just in case).  
 Call me paranoid if you want. But I just wanna watch garfield on my TV from a trash picked computer without having to worry about a swat team showing up at my house.
+
+## Patreon Shoutouts
+**Super EPIC shoutouts to my Patreon Supporters:**  
+Garwaron, Yacob, Uncle Cletus, Lachlan Moore, bert, Lachlan Hill
+
+Thank you! 😀
+If you want to support my programming/tech projects or my content you can join my Patreon here: https://www.patreon.com/Kippykip
